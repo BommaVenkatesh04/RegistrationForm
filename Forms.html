@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS IN HTML</title>
+</head>
+<body>
+    
+         <h1 translate="no">Visa</h1>
+        <fieldset >
+            <br>
+            <legend>Personal Information</legend>
+    <form action="">
+        <label for="name">Enter Name: </label>
+        <input type="text" id="name" name="username">
+<br><br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="gmail" placeholder="@gmail.com">
+<br><br>
+<label for="">Enter password : </label>
+<input type="password">
+<br>
+<br>
+
+<label for="mobile">Enter Mobile Number : </label>
+<input type="tel" id="mobile">
+
+<br><br>
+<label for="">Enter DOB:</label>
+<input type="date">
+<input type="datetime-local">
+<br><br>
+<label>
+    <input type="radio" name="gender" value="male"> Male
+</label>
+<label>
+    <input type="radio" name="gender" value="female"> Female
+</label>
+<label>
+    <input type="radio" name="gender" value="others"> Others
+</label>
+</fieldset>
+<br><br>
+<fieldset>
+<br>
+<legend>General Information</legend>
+
+<label for="">Enter resume url</label>
+<input type="url">
+<input type="color">
+<input type="range">
+<input type="week">
+<br><br>
+<label for="">Hidden Field</label>
+<input type="hidden">
+<br><br>
+
+<label>
+    <input type="checkbox" name="op1" value="html"> HTML
+</label>
+<label>
+    <input type="checkbox" name="op2" value="css"> CSS
+</label>
+<label>
+    <input type="checkbox" name="op3" value="java"> Java
+</label>
+<br><br>
+</fieldset>
+<br>
+<br>
+<label for="country">country </label>
+<select name="country" id="country">
+    <option value="india">India</option>
+    <option value="newziland">Newzeland</option>
+    <option value="southafrica">SouthAfrica</option>
+    <option value="srilanks">SriLanka</option>
+</select>
+
+
+
+
+<br>
+<br>
+
+        <label for="captcha">Enter Captcha: <span style="color: red;">*</span> </label>
+        <input type="text" id="captcha" name="Captcha" placeholder="Enter captcha hear" title="Enter only alpha & digits" required>
+        <br> 
+        <br>
+        
+        <button type="submit" title="please submit">submit</button>
+        <input type="reset" value="cancel" title="If you click on cancel enter data will be vanisher">
+        
+<br><br>
+
+        <label for="feedback">Enter a feedback:</label>
+        <textarea name="comments" id="feedback" rows="5" cols="50" placeholder="plz enter you feedbackhear"></textarea>
+        
+    </form>
+</body>
+</html>
