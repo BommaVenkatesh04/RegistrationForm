@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Course Registration Form</title>
+
+    <style>
+
+        body{
+            margin:0;
+            padding:40px;
+            background:#f5f5f5;
+            font-family:Arial, sans-serif;
+        }
+
+        h1{
+            text-align:center;
+            color:#222;
+            font-size:40px;
+            margin-bottom:30px;
+        }
+
+        form{
+            width:700px;
+            margin:auto;
+            background:white;
+            padding:35px;
+            border-radius:15px;
+            border:1px solid #dcdcdc;
+            box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        fieldset{
+            border:none;
+            margin-bottom:20px;
+        }
+
+        legend{
+            font-size:24px;
+            font-weight:bold;
+            color:#333;
+            margin-bottom:20px;
+        }
+
+        table{
+            width:100%;
+        }
+
+        td{
+            padding:12px;
+            font-size:16px;
+        }
+
+        label{
+            font-weight:600;
+            color:#333;
+        }
+
+        input,
+        select,
+        textarea{
+            width:100%;
+            padding:12px;
+            border:1px solid #d0d0d0;
+            border-radius:10px;
+            font-size:15px;
+            background:#fafafa;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus{
+            outline:none;
+            border:1px solid #f5b800;
+            background:white;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"]{
+            width:auto;
+            margin-right:6px;
+        }
+
+        .btns{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        input[type="submit"],
+        input[type="reset"]{
+            width:160px;
+            padding:12px;
+            background:#f5b800;
+            border:none;
+            border-radius:6px;
+            font-size:16px;
+            font-weight:bold;
+            color:black;
+            cursor:pointer;
+            margin:10px;
+            transition:0.3s;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover{
+            background:#e0a800;
+        }
+
+        #successMsg{
+            text-align:center;
+            margin-top:20px;
+            color:green;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Course Registration Form</h1>
+
+    <form onsubmit="showSuccessMessage(event)"
+          method="post"
+          enctype="multipart/form-data">
+
+        <!-- Personal Details -->
+        <fieldset>
+
+            <legend>Personal Details</legend>
+
+            <table cellpadding="5">
+
+                <tr>
+                    <td><label for="fname">First Name</label></td>
+
+                    <td>
+                        <input type="text"
+                               id="fname"
+                               name="FN"
+                               placeholder="Ex: Rohit"
+                               maxlength="15"
+                               required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="lname">Surname</label></td>
+
+                    <td>
+                        <input type="text"
+                               id="lname"
+                               name="LN"
+                               placeholder="Ex: Ravindra"
+                               maxlength="10"
+                               required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="mobile">Mobile Number</label></td>
+
+                    <td>
+                        <input type="tel"
+                               id="mobile"
+                               name="mob"
+                               placeholder="9844567890"
+                               required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">Email</label></td>
+
+                    <td>
+                        <input type="email"
+                               id="email"
+                               name="mail"
+                               placeholder="rohit@gmail.com"
+                               required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="pwd">Password</label></td>
+
+                    <td>
+                        <input type="password"
+                               id="pwd"
+                               name="pwd"
+                               placeholder="Min 5 characters"
+                               minlength="5"
+                               required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="cpwd">Confirm Password</label></td>
+
+                    <td>
+                        <input type="password"
+                               id="cpwd"
+                               name="cpwd"
+                               placeholder="Re-enter password"
+                               minlength="5"
+                               required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="dob">DOB</label></td>
+
+                    <td>
+                        <input type="date"
+                               id="dob"
+                               name="dob">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+
+                    <td>
+                        <input type="radio"
+                               name="gender"
+                               value="M"> Male
+
+                        <input type="radio"
+                               name="gender"
+                               value="F"> Female
+
+                        <input type="radio"
+                               name="gender"
+                               value="O"> Other
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="country">Select Country</label></td>
+
+                    <td>
+                        <select id="country"
+                                name="country">
+
+                            <option value="INDIA">India</option>
+                            <option value="USA">USA</option>
+                            <option value="ENGLAND">England</option>
+                            <option value="IRELAND">Ireland</option>
+
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="pic">Upload Picture</label></td>
+
+                    <td>
+                        <input type="file"
+                               id="pic"
+                               name="pic">
+                    </td>
+                </tr>
+
+            </table>
+
+        </fieldset>
+
+        <!-- Course Details -->
+        <fieldset>
+
+            <legend>Course Details</legend>
+
+            <table cellpadding="5">
+
+                <tr>
+                    <td><label for="course">Select Course</label></td>
+
+                    <td>
+                        <select id="course"
+                                name="course">
+
+                            <option value="JFS">Java Full Stack</option>
+                            <option value="PFS">Python Full Stack</option>
+                            <option value="TP">Premium Testing</option>
+
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Delivery Mode</td>
+
+                    <td>
+                        <input type="checkbox"
+                               name="mode1"
+                               value="ONLINE"> ONLINE
+
+                        <input type="checkbox"
+                               name="mode2"
+                               value="OFFLINE"> OFFLINE
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="comments">Comments</label></td>
+
+                    <td>
+                        <textarea id="comments"
+                                  rows="4"
+                                  cols="40"
+                                  placeholder="Enter comments here..."></textarea>
+                    </td>
+                </tr>
+
+            </table>
+
+        </fieldset>
+
+        <!-- Buttons -->
+        <div class="btns">
+
+            <input type="submit"
+                   value="Register">
+
+            <input type="reset"
+                   value="Reset">
+
+        </div>
+
+        <!-- Success Message -->
+        <p id="successMsg"></p>
+
+    </form>
+
+    <!-- JavaScript -->
+    <script>
+
+        function showSuccessMessage(event){
+
+            event.preventDefault();
+
+            document.getElementById("successMsg").innerHTML =
+            "Registration Successful!";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
